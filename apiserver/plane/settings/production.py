@@ -16,3 +16,7 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SCOUT_MONITOR = os.environ.get("SCOUT_MONITOR", False)
 SCOUT_KEY = os.environ.get("SCOUT_KEY", "")
 SCOUT_NAME = "Plane"
+
+AWS_S3_ADDRESSING_STYLE = os.environ.get("AWS_S3_ADDRESSING_STYLE", None)
+AWS_S3_BUCKET_AUTH = os.environ.get("AWS_S3_BUCKET_AUTH", False)
+AWS_S3_MAX_AGE_SECONDS = os.environ.get("AWS_S3_MAX_AGE_SECONDS", 604800)

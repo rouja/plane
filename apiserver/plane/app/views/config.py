@@ -34,6 +34,7 @@ class ConfigurationEndpoint(BaseAPIView):
             POSTHOG_HOST,
             UNSPLASH_ACCESS_KEY,
             OPENAI_API_KEY,
+            SMTP_CONFIGURED,
         ) = get_configuration_value(
             [
                 {
@@ -83,6 +84,10 @@ class ConfigurationEndpoint(BaseAPIView):
                 {
                     "key": "OPENAI_API_KEY",
                     "default": os.environ.get("OPENAI_API_KEY", "1"),
+                },
+                {
+                    "key": "SMTP_CONFIGURED",
+                    "default": os.environ.get("SMTP_CONFIGURED", False),
                 },
             ]
         )
@@ -147,6 +152,7 @@ class MobileConfigurationEndpoint(BaseAPIView):
             POSTHOG_HOST,
             UNSPLASH_ACCESS_KEY,
             OPENAI_API_KEY,
+            SMTP_CONFIGURED,
         ) = get_configuration_value(
             [
                 {
@@ -192,6 +198,10 @@ class MobileConfigurationEndpoint(BaseAPIView):
                 {
                     "key": "OPENAI_API_KEY",
                     "default": os.environ.get("OPENAI_API_KEY", "1"),
+                },
+                {
+                    "key": "SMTP_CONFIGURED",
+                    "default": os.environ.get("SMTP_CONFIGURED", False),
                 },
             ]
         )
