@@ -124,9 +124,7 @@ class ConfigurationEndpoint(BaseAPIView):
         )
 
         # is smtp configured
-        data["is_smtp_configured"] = bool(EMAIL_HOST_USER) and bool(
-            EMAIL_HOST_PASSWORD
-        )
+        data["is_smtp_configured"] = bool(SMTP_CONFIGURED)
 
         return Response(data, status=status.HTTP_200_OK)
 
@@ -240,8 +238,6 @@ class MobileConfigurationEndpoint(BaseAPIView):
         )
 
         # is smtp configured
-        data["is_smtp_configured"] = not (
-            bool(EMAIL_HOST_USER) and bool(EMAIL_HOST_PASSWORD)
-        )
+        data["is_smtp_configured"] = bool(SMTP_CONFIGURED)
 
         return Response(data, status=status.HTTP_200_OK)
